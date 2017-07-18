@@ -22,7 +22,7 @@ class ProductLine {
     
     class func getProductLines() -> [ProductLine] {
         
-        return []
+        return [iDevices(), mac(), software(), iPod(), iCloudAndApplePay()]
         
     }
     
@@ -104,25 +104,5 @@ class ProductLine {
         
         return ProductLine(named: "iCloud and Apple Pay", includeProducts: products)
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
