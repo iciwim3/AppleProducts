@@ -6,6 +6,10 @@
 //  Copyright © 2017 Sain-R Edwards Jr. All rights reserved.
 //
 
+// 1 - Design the new cell in Storyboard
+// 2 - Create a subclass of UITableViewCell for the new cell
+// 3 - Update cell with UITableViewDataSource
+
 import UIKit
 
 class ProductsTableViewController: UITableViewController {
@@ -18,6 +22,9 @@ class ProductsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         title = "Apple Store at Westheimer"
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
@@ -33,11 +40,11 @@ class ProductsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProductTableViewCell
         
         let product = products[indexPath.row]
         
-        cell.textLabel?.text = product.title
+        cell.product = product
         
         return cell
     }

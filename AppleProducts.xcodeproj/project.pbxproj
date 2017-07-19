@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8843F4151F1EE76F00989CA4 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8843F4141F1EE76F00989CA4 /* ProductTableViewCell.swift */; };
 		886EE9491F1D8B4800CB6020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886EE9481F1D8B4800CB6020 /* AppDelegate.swift */; };
-		886EE94B1F1D8B4800CB6020 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886EE94A1F1D8B4800CB6020 /* ViewController.swift */; };
 		886EE94E1F1D8B4800CB6020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886EE94C1F1D8B4800CB6020 /* Main.storyboard */; };
 		886EE9501F1D8B4800CB6020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886EE94F1F1D8B4800CB6020 /* Assets.xcassets */; };
 		886EE9531F1D8B4800CB6020 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886EE9511F1D8B4800CB6020 /* LaunchScreen.storyboard */; };
@@ -18,9 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8843F4141F1EE76F00989CA4 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		886EE9451F1D8B4800CB6020 /* AppleProducts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleProducts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886EE9481F1D8B4800CB6020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		886EE94A1F1D8B4800CB6020 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		886EE94D1F1D8B4800CB6020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		886EE94F1F1D8B4800CB6020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		886EE9521F1D8B4800CB6020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8843F4121F1EE1E600989CA4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				886EE95F1F1D986300CB6020 /* ProductsTableViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8843F4131F1EE74400989CA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				886EE94C1F1D8B4800CB6020 /* Main.storyboard */,
+				8843F4141F1EE76F00989CA4 /* ProductTableViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		886EE93C1F1D8B4800CB6020 = {
 			isa = PBXGroup;
 			children = (
@@ -61,9 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				886EE9481F1D8B4800CB6020 /* AppDelegate.swift */,
-				886EE94A1F1D8B4800CB6020 /* ViewController.swift */,
-				886EE95F1F1D986300CB6020 /* ProductsTableViewController.swift */,
-				886EE94C1F1D8B4800CB6020 /* Main.storyboard */,
+				8843F4121F1EE1E600989CA4 /* Controllers */,
+				8843F4131F1EE74400989CA4 /* Views */,
 				886EE94F1F1D8B4800CB6020 /* Assets.xcassets */,
 				886EE95A1F1D8C2800CB6020 /* Model */,
 				886EE9511F1D8B4800CB6020 /* LaunchScreen.storyboard */,
@@ -154,9 +170,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886EE94B1F1D8B4800CB6020 /* ViewController.swift in Sources */,
 				886EE95E1F1D8ECB00CB6020 /* ProductLine.swift in Sources */,
 				886EE9491F1D8B4800CB6020 /* AppDelegate.swift in Sources */,
+				8843F4151F1EE76F00989CA4 /* ProductTableViewCell.swift in Sources */,
 				886EE95C1F1D8C7600CB6020 /* Product.swift in Sources */,
 				886EE9601F1D986300CB6020 /* ProductsTableViewController.swift in Sources */,
 			);
@@ -322,6 +338,7 @@
 				886EE9591F1D8B4800CB6020 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
