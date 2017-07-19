@@ -16,8 +16,6 @@ class ProductsTableViewController: UITableViewController {
 
     // MARK: - Data model
     
-    // var products = ProductLine.getProductLines()[1].products
-    
     var productLines: [ProductLine] = ProductLine.getProductLines()
     
     override func viewDidLoad() {
@@ -57,7 +55,6 @@ class ProductsTableViewController: UITableViewController {
         let productLine = productLines[section]
         
         return productLine.name
-        
         
     }
     
