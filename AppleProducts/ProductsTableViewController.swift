@@ -8,14 +8,20 @@
 
 // * Custom Table View Cell
 
-// 1 - Design the new cell in Storyboard
-// 2 - Create a subclass of UITableViewCell for the new cell
-// 3 - Update cell with UITableViewDataSource
+// 1. Design the new cell in Storyboard
+// 2. Create a subclass of UITableViewCell for the new cell
+// 3. Update cell with UITableViewDataSource
 
 // * Delete Rows
 // 1. Edit button on the right
 // 2. Delete a row (in our data model & in our tableview -- UI)
 // 3. Nice animagion - move the table view rows up
+
+// --
+
+// * Move rows around table view
+// 1. Tell the table view that you want to be able to move rows around
+// 2. Update the data model & update the table view UI
 
 import UIKit
 
@@ -89,11 +95,42 @@ class ProductsTableViewController: UITableViewController {
         
     }
     
+    // Moving Cells
     
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+       
+        return true
+        
+    }
     
+    // Update the tableview and UI
     
-    
-    
-    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        let productToMove = productLines[sourceIndexPath.section].products[sourceIndexPath.row]
+        
+        // Move productToMove to destination products
+        productLines[destinationIndexPath.section].products.insert(productToMove, at: destinationIndexPath.row)
+        
+        // Delete the productToMove from the source products
+        productLines[sourceIndexPath.section].products.remove(at: sourceIndexPath.row)
+        
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
