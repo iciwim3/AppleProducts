@@ -23,8 +23,37 @@ class ProductDetailTableViewController: UITableViewController {
         
         productImageView.image = product?.image
         productTitleTextField.text = product?.title
+        productTitleTextField.delegate = self
         productDescriptionTextView.text = product?.description
         
     }
+    
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return indexPath
+        } else {
+            return nil
+        }
+    }
 
+}
+
+extension ProductDetailTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension ProductDetailTableViewController {
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        
+        productDescriptionTextView.resignFirstResponder()
+        productTitleTextField.resignFirstResponder()
+        
+    }
 }
