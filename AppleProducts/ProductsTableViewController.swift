@@ -117,20 +117,26 @@ class ProductsTableViewController: UITableViewController {
         
     }
     
+    // MARK: - UITableViewDelegate
+    
+    var selectedProduct: Product?
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let productLine = productLines[indexPath.section]
+        let product = productLine.products[indexPath.row]
+        
+        selectedProduct = product
+        
+        performSegue(withIdentifier: "ShowProductDetail", sender: nil)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowProductDetail" {
+            let productDetailTVC = segue.destination as! ProductDetailTableViewController
+            productDetailTVC.product = selectedProduct
+        }
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
